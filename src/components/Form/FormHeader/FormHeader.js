@@ -17,7 +17,7 @@ export const FormHeader = () => {
                 <input type='text' placeholder='Untitled Form' className='form-name' />
                 <IconButton><FolderOpenIcon className='form-header-icon' style={{ marginRight: "10px" }} /></IconButton>
                 <IconButton><StarBorderIcon className='form-header-icon' style={{ marginRight: "10px" }} /></IconButton>
-                <span style={{ fontSize: "12px", fontWeight: "600" }}>All changes saved in drive</span>
+                <span style={{ fontSize: "12px", fontWeight: "600", color: "grey" }}>All changes saved in drive &#x2713;</span>
             </div>
 
             <div className='form_header_right'>
