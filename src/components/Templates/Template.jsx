@@ -8,7 +8,14 @@ import Party from "../../assets/party.png"
 import Contact from "../../assets/Contact.png"
 import RSVP from "../../assets/rsvp.png"
 import Tshirt from "../../assets/tshirt.png"
+import uuid from "react-uuid"
+import { useNavigate } from 'react-router-dom';
 export const Template = () => {
+    const navigate = useNavigate();
+    const handleOpen = () => {
+        let id = uuid();
+        navigate(`/form/${id}`)
+    }
     return (
         <div className='template-section'>
             <div className="template_top">
@@ -26,7 +33,7 @@ export const Template = () => {
                 </div>
             </div>
             <div className="template-body">
-                <div className="card">
+                <div className="card" onClick={handleOpen}>
                     <img src={Blank} alt="error" />
                     <p>Create New Form</p>
                 </div>
