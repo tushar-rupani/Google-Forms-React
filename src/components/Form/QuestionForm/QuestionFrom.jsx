@@ -92,6 +92,16 @@ export const QuestionFrom = () => {
         options.splice(child, 1)
         setQuestions(cloneOfQuestions)
     }
+
+    const handleAddOptions = (index) => {
+        const cloneOfQuestions = [...questions];
+        if (cloneOfQuestions[index].options.length < 5) {
+            cloneOfQuestions[index].options.push({ optionText: `Option ${cloneOfQuestions[index].options.length + 1}` })
+            setQuestions(cloneOfQuestions)
+        } else {
+            alert("maximum 5 options supported")
+        }
+    }
     const [questions, setQuestions] = useState(dummyData)
     const questionUi = () => {
         return questions.map((que, index) => (
@@ -165,8 +175,8 @@ export const QuestionFrom = () => {
                                         }} />
                                 } label={
                                     <div className='input-add'>
-                                        <input type="text" className='text_input' style={{ fontSize: "13px", width: "70px" }} placeholder='Add more' />
-                                        <Button size='small' style={{ textTransform: "none", color: "#4285f4", fontSize: "13px", fontWeight: "600" }}>
+
+                                        <Button size='small' style={{ textTransform: "none", color: "#4285f4", fontSize: "13px", fontWeight: "600" }} onClick={() => handleAddOptions(index)}>
                                             Add Option
                                         </Button>
                                     </div>
